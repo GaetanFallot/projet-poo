@@ -1,5 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
+version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
@@ -32,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `combat` (
   `id_combat` int NOT NULL AUTO_INCREMENT,
   `date_combat` date NOT NULL,
   PRIMARY KEY (`id_combat`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `combat`
@@ -57,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `combat_personnage` (
   PRIMARY KEY (`id_combat_personnage`),
   KEY `id_combat` (`id_combat`),
   KEY `id_personnage` (`id_personnage`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `combat_personnage`
@@ -86,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `pantheon` (
   `intel` int NOT NULL,
   `cha` int NOT NULL,
   PRIMARY KEY (`id_pantheon`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `pantheon`
@@ -116,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `personnage` (
   `intel` int NOT NULL,
   `cha` int NOT NULL,
   PRIMARY KEY (`id_personnage`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `personnage`
@@ -143,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `perso_profession` (
   PRIMARY KEY (`id_perso_profession`),
   KEY `id_personnage` (`id_personnage`),
   KEY `id_profession` (`id_profession`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `perso_profession`
@@ -167,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `profession` (
   `id_profession` int NOT NULL AUTO_INCREMENT,
   `professionName` varchar(32) NOT NULL,
   PRIMARY KEY (`id_profession`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `profession`
