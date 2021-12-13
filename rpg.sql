@@ -1,20 +1,7 @@
-version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1:3306
--- Généré le : lun. 13 déc. 2021 à 07:13
--- Version du serveur : 8.0.27
--- Version de PHP : 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données : `rpg`
@@ -31,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `combat` (
   `id_combat` int NOT NULL AUTO_INCREMENT,
   `date_combat` date NOT NULL,
   PRIMARY KEY (`id_combat`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `combat`
@@ -56,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `combat_personnage` (
   PRIMARY KEY (`id_combat_personnage`),
   KEY `id_combat` (`id_combat`),
   KEY `id_personnage` (`id_personnage`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `combat_personnage`
@@ -85,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `pantheon` (
   `intel` int NOT NULL,
   `cha` int NOT NULL,
   PRIMARY KEY (`id_pantheon`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `pantheon`
@@ -115,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `personnage` (
   `intel` int NOT NULL,
   `cha` int NOT NULL,
   PRIMARY KEY (`id_personnage`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `personnage`
@@ -142,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `perso_profession` (
   PRIMARY KEY (`id_perso_profession`),
   KEY `id_personnage` (`id_personnage`),
   KEY `id_profession` (`id_profession`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `perso_profession`
@@ -166,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `profession` (
   `id_profession` int NOT NULL AUTO_INCREMENT,
   `professionName` varchar(32) NOT NULL,
   PRIMARY KEY (`id_profession`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `profession`
@@ -199,7 +186,3 @@ ALTER TABLE `perso_profession`
   ADD CONSTRAINT `perso_profession_ibfk_1` FOREIGN KEY (`id_personnage`) REFERENCES `personnage` (`id_personnage`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `perso_profession_ibfk_2` FOREIGN KEY (`id_profession`) REFERENCES `profession` (`id_profession`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
